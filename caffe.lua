@@ -13,7 +13,7 @@ project "CaffeMake"
 		"make clean",
 	 }
 	--staticruntime "on"
-	targetdir ("%{wks.location}/build/install-" .. outputdir .. "/%{prj.name}")
+	targetdir ("%{wks.location}/build/install" .. outputdir .. "/%{prj.name}")
 	objdir ("%{wks.location}/build/objdir/" ..  outputdir .. "/%{prj.name}")
 	files
 	{
