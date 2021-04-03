@@ -101,3 +101,5 @@ MANIFEST-*
 jobs
 temp
 examples/*/*lmdb
+
+CaffeMake.sh
