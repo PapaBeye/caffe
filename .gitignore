@@ -103,3 +103,5 @@ temp
 examples/*/*lmdb
 
 CaffeMake.sh
+
+Makefile

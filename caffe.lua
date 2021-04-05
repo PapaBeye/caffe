@@ -6,11 +6,12 @@ project "CaffeMake"
 
 	prebuildcommands { "cd %{prj.location} && cp -f Makefile.config.Xavier Makefile.config" }
 	buildcommands {
-		"make -j$(nproc)",
+		"make -f caffe.mk -j6",
 	 }
+	postbuildcommands{"cd %{prj.location} && cp -r build/src/caffe/proto include/caffe"}
 
 	cleancommands {
-		"make clean",
+		"make -f caffe.mk clean",
 	 }
 	--staticruntime "on"
 	targetdir ("%{wks.location}/build/install" .. outputdir .. "/%{prj.name}")
@@ -23,7 +24,6 @@ project "CaffeMake"
 		"%{prj.location}/src/**.hpp",
 		"%{prj.location}/src/**.cpp",
 		"%{prj.location}/src/**.c",
-		"%{prj.location}/Makefile",
 		
 	}
 
